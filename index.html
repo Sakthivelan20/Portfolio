@@ -6,290 +6,182 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
        :root {
-    --dominant-color: #0084ff; /* Primary Blue Color */
-    --text-color: #ffffff; /* White Text Color */
-    --bg-color: #000000; /* Dark Black Background */
-    --card-bg: #00; /* Slightly lighter black for cards */
-    --border-color: #373838; /* Border Color */
-}
+           --dominant-color: #0084ff;
+           --text-color: #ffffff;
+           --bg-color: #000000;
+           --card-bg: #222222;
+           --border-color: #373838;
+       }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    scroll-behavior: smooth;
-    color: var(--text-color);
-}
+       body {
+           font-family: 'Poppins', sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: var(--bg-color);
+           scroll-behavior: smooth;
+           color: var(--text-color);
+       }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
+       .container {
+           width: 90%;
+           max-width: 1200px;
+           margin: 20px auto;
+           display: grid;
+           gap: 20px;
+       }
 
-.navbar {
-    background-color: var(--card-bg);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
-}
+       .navbar {
+           background-color: var(--card-bg);
+           padding: 15px 20px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           border: 1px solid var(--border-color);
+           border-radius: 10px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+           position: relative;
+       }
 
-.navbar nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
+       .navbar nav ul {
+           list-style: none;
+           display: flex;
+       }
 
-.navbar nav ul li {
-    margin: 0 10px;
-}
+       .navbar nav ul li {
+           margin: 0 10px;
+       }
 
-.navbar nav ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: color 0.3s;
-}
+       .navbar nav ul li a {
+           color: var(--text-color);
+           text-decoration: none;
+           font-weight: 600;
+           padding: 8px 12px;
+           transition: color 0.3s;
+       }
 
-.navbar nav ul li a:hover {
-    color: var(--border-color);
-}
+       .navbar nav ul li a:hover {
+           color: var(--border-color);
+       }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
+       .hamburger {
+           display: none;
+           flex-direction: column;
+           cursor: pointer;
+       }
 
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 3px 0;
-    transition: 0.4s;
-}
+       .hamburger div {
+           width: 25px;
+           height: 3px;
+           background-color: var(--text-color);
+           margin: 3px 0;
+           transition: 0.4s;
+       }
 
-.intro-section {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    padding: 30px 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--border-color);
-}
+       .intro-section, .section {
+           background-color: var(--card-bg);
+           border-radius: 10px;
+           padding: 30px 15px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+           border: 1px solid var(--border-color);
+       }
 
-.intro-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+       .intro-content {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           flex-wrap: wrap;
+           gap: 20px;
+       }
 
-.info {
-    flex: 1;
-    min-width: 250px;
-}
+       .info {
+           flex: 1;
+       }
 
-.info h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
+       .info h1 {
+           font-size: 2em;
+           font-weight: 600;
+       }
 
-.info p {
-    font-size: 1em;
-    margin: 5px 0;
-    font-weight: 300;
-}
+       .photo img {
+           width: 100%;
+           max-width: 250px;
+           border-radius: 10px;
+           border: 2px solid var(--border-color);
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+           transition: transform 0.3s;
+       }
 
-.download-btn {
-    display: inline-block;
-    margin-top: 15px;
-    background-color: transparent;
-    color: var(--dominant-color);
-    border: 2px solid var(--dominant-color);
-    padding: 10px 15px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-}
+       .photo img:hover {
+           transform: scale(1.05);
+       }
 
-.download-btn:hover {
-    background-color: var(--dominant-color);
-    color: #fff;
-}
+       .section h2 {
+           text-align: center;
+           color: var(--dominant-color);
+           font-size: 1.8em;
+           font-weight: 600;
+       }
 
-.photo {
-    flex: 0 0 250px;
-    text-align: center;
-}
+       .education-item {
+           display: flex;
+           align-items: center;
+           gap: 15px;
+           margin-bottom: 20px;
+       }
 
-.photo img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
+       .education-item img {
+           width: 80px;
+           height: 80px;
+           border-radius: 10px;
+           border: 1px solid var(--border-color);
+       }
 
-.photo img:hover {
-    transform: scale(1.05);
-}
+       .skills-list {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+           gap: 10px;
+           text-align: center;
+       }
 
-.photo .name {
-    margin-top: 10px;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--text-color);
-    text-align: center;
-}
+       .skill {
+           background: transparent;
+           border: 2px solid var(--dominant-color);
+           color: var(--dominant-color);
+           padding: 8px;
+           border-radius: 20px;
+           transition: background-color 0.3s, color 0.3s;
+       }
 
-.section {
-    padding: 15px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border-color);
-}
+       .skill:hover {
+           background: var(--dominant-color);
+           color: #fff;
+       }
 
-.section h2 {
-    text-align: center;
-    color: var(--dominant-color);
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
+       .contact-info a {
+           color: var(--dominant-color);
+           text-decoration: none;
+           transition: color 0.3s;
+       }
 
-.education-item, .skills-list, .project-item {
-    margin-bottom: 10px;
-    text-align: left;
-    padding: 0 10px;
-}
+       @media (max-width: 768px) {
+           .intro-content {
+               flex-direction: column;
+               text-align: center;
+           }
 
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
-    text-align: center;
-}
+           .navbar nav {
+               display: none;
+           }
 
-.skill {
-    background: transparent;
-    border: 2px solid var(--dominant-color);
-    color: var(--dominant-color);
-    padding: 8px;
-    border-radius: 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.skill:hover {
-    background: var(--dominant-color);
-    color: #fff;
-}
-
-.contact-info {
-    font-size: 1em;
-    color: var(--text-color);
-    text-align: center;
-}
-
-.contact-info a {
-    color: var(--dominant-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info a:hover {
-    color: #0056b3; /* Darker shade of blue for hover effect */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .intro-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .photo {
-        flex: 1 0 100%;
-        margin-bottom: 20px;
-    }
-
-    .info {
-        min-width: auto;
-    }
-
-    .info h1 {
-        font-size: 1.6em;
-    }
-
-    .info p {
-        font-size: 0.9em;
-    }
-
-    .navbar nav {
-        display: none; /* Hide navigation links by default */
-        position: absolute;
-        background-color: var(--card-bg);
-        top: 60px; /* Position below the navbar */
-        right: 20px;
-        border-radius: 5px;
-        padding: 10px;
-        z-index: 1;
-    }
-
-    .navbar.active nav {
-        display: flex; /* Show navigation links when navbar is active */
-        flex-direction: column;
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon on mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar nav ul li {
-        margin: 5px 0;
-    }
-
-    .section h2 {
-        font-size: 1.5em;
-    }
-
-    .skills-list {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    }
-}
-
+           .hamburger {
+               display: flex;
+           }
+       }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="navbar" id="navbar">
-            <div class="logo">
-                <h2 style="color: var(--text-color); margin: 0;"></h2>
-            </div>
             <div class="hamburger" onclick="toggleNavbar()">
                 <div></div>
                 <div></div>
@@ -300,7 +192,6 @@ body {
                     <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -311,9 +202,7 @@ body {
                 <div class="info">
                     <h1>I am a Full-Stack Developer</h1>
                     <p>Building interactive and user-friendly web applications.</p>
-                    <p>Skilled in both front-end and back-end technologies.</p>
-                    <p>Passionate about creating seamless digital experiences.</p>
-                    <a href="Sakthivelan_2024_Bsc_FullStack.pdf (1).pdf" class="download-btn">Download Resume</a>
+                    <a href="Sakthivelan_2024_Bsc_FullStack.pdf" class="download-btn">Download Resume</a>
                 </div>
                 <div class="photo">
                     <img src="my.png" alt="Profile Photo">
@@ -324,21 +213,28 @@ body {
 
         <div class="section" id="education">
             <h2>Education</h2>
-            <div class="education-container">
-                <div class="education-item">
-                    <h3>Collage</h3>
+            <div class="education-item">
+                <img src="image1.jpg" alt="College">
+                <div>
+                    <h3>College</h3>
                     <p>B.Sc in Computer Science, SASTRA University</p>
                     <p>Year of Graduation: 2024</p>
                     <p>CGPA: 6.4</p>
                 </div>
-                <div class="education-item">
+            </div>
+            <div class="education-item">
+                <img src="image2.jpg" alt="Matriculation">
+                <div>
                     <h3>Matriculation</h3>
                     <p>The Little Flower Matriculation School: 2020</p>
                     <p>Percentage: 72%</p>
                 </div>
-                <div class="education-item">
+            </div>
+            <div class="education-item">
+                <img src="621 T.jpg" alt="Higher Secondary">
+                <div>
                     <h3>Higher Secondary</h3>
-                    <p> Town Higher Secondary School, Year: 2022</p>
+                    <p>Town Higher Secondary School, Year: 2022</p>
                     <p>Percentage: 78%</p>
                 </div>
             </div>
@@ -346,15 +242,13 @@ body {
 
         <div class="section" id="skills">
             <h2>Skills</h2>
-            <div class="skills-list" style="color:white;">
-                <div class="skill" style="color: #fff;">HTML</div>
-                <div class="skill"style="color: #fff;">CSS</div>
-                <div class="skill"style="color: #fff;">JS</div>
-                
-                <div class="skill"style="color: #fff;">MySQL</div>
-                <div class="skill"style="color: #fff;">React</div>
-       
-                <div class="skill"style="color: #fff;">Java</div>
+            <div class="skills-list">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">MySQL</div>
+                <div class="skill">React</div>
+                <div class="skill">Java</div>
             </div>
         </div>
 
@@ -364,13 +258,17 @@ body {
                 <h3>Online Job Search Portal</h3>
                 <p>A platform to connect job seekers with employers.</p>
             </div>
-           
+            <div class="project-item">
+                <h3>Patient Record Management System</h3>
+                <p>A web application for hospitals to manage patient records and allow patients to view their details and book appointments seamlessly.</p>
+            </div>
         </div>
+        
 
         <div class="section" id="contact">
             <h2>Contact</h2>
-            <p class="contact-info">Email: <a href="sakthivelan208@gmail.com"  style="color: #fff;">sakthivelan208@gmail.com</a></p>
-            <p class="contact-info">Phone: <a href="9342746108"  style="color: #fff;">9342746108</a></p>
+            <p class="contact-info">Email: <a href="mailto:sakthivelan208@gmail.com">sakthivelan208@gmail.com</a></p>
+            <p class="contact-info">Phone: <a href="tel:9342746108">9342746108</a></p>
         </div>
     </div>
 
