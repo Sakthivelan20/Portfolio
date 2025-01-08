@@ -3,190 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <style>
-       :root {
-           --dominant-color: #0084ff;
-           --text-color: #ffffff;
-           --bg-color: #000000;
-           --card-bg: #222222;
-           --border-color: #373838;
-       }
+        :root {
+            --dominant-color: #0084ff;
+            --text-color: #ffffff;
+            --bg-color: #000000;
+            --card-bg: #333333;
+            --border-color: #dddddd;
+            --hover-shadow-color: rgba(0, 132, 255, 0.2);
+        }
 
-       body {
-           font-family: 'Poppins', sans-serif;
-           margin: 0;
-           padding: 0;
-           background-color: var(--bg-color);
-           scroll-behavior: smooth;
-           color: var(--text-color);
-       }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            scroll-behavior: smooth;
+            color: var(--text-color);
+        }
 
-       .container {
-           width: 90%;
-           max-width: 1200px;
-           margin: 20px auto;
-           display: grid;
-           gap: 20px;
-       }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            gap: 20px;
+        }
 
-       .navbar {
-           background-color: var(--card-bg);
-           padding: 15px 20px;
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           border: 1px solid var(--border-color);
-           border-radius: 10px;
-           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-           position: relative;
-       }
+        .navbar {
+            background-color: var(--card-bg);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-       .navbar nav ul {
-           list-style: none;
-           display: flex;
-       }
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-       .navbar nav ul li {
-           margin: 0 10px;
-       }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
 
-       .navbar nav ul li a {
-           color: var(--text-color);
-           text-decoration: none;
-           font-weight: 600;
-           padding: 8px 12px;
-           transition: color 0.3s;
-       }
+        .navbar nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px 15px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+        }
 
-       .navbar nav ul li a:hover {
-           color: var(--border-color);
-       }
+        .navbar nav ul li a:hover {
+            color: var(--dominant-color);
+            transform: translateY(-2px);
+        }
 
-       .hamburger {
-           display: none;
-           flex-direction: column;
-           cursor: pointer;
-       }
+        .intro-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
 
-       .hamburger div {
-           width: 25px;
-           height: 3px;
-           background-color: var(--text-color);
-           margin: 3px 0;
-           transition: 0.4s;
-       }
+        .intro-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
 
-       .intro-section, .section {
-           background-color: var(--card-bg);
-           border-radius: 10px;
-           padding: 30px 15px;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-           border: 1px solid var(--border-color);
-       }
+        .info h1 {
+            font-size: 3em;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-       .intro-content {
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-           flex-wrap: wrap;
-           gap: 20px;
-       }
+        .info p {
+            margin: 20px 0;
+            font-size: 1.5em;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8;
+        }
 
-       .info {
-           flex: 1;
-       }
+        .photo img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+            float: right; /* Align photo to the right */
+            margin-left: 400px; /* Add space between the photo and the text */
+        }
 
-       .info h1 {
-           font-size: 2em;
-           font-weight: 600;
-       }
+        .photo img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 132, 255, 0.2);
+        }
 
-       .photo img {
-           width: 100%;
-           max-width: 250px;
-           border-radius: 10px;
-           border: 2px solid var(--border-color);
-           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-           transition: transform 0.3s;
-       }
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--dominant-color);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s, transform 0.3s ease-in-out;
+        }
 
-       .photo img:hover {
-           transform: scale(1.05);
-       }
+        .download-btn:hover {
+            background-color: #005bb5;
+            transform: translateY(-2px);
+        }
 
-       .section h2 {
-           text-align: center;
-           color: var(--dominant-color);
-           font-size: 1.8em;
-           font-weight: 600;
-       }
+        .section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
 
-       .education-item {
-           display: flex;
-           align-items: center;
-           gap: 15px;
-           margin-bottom: 20px;
-       }
+        .section h2 {
+            text-align: center;
+            color: var(--dominant-color);
+            font-size: 2.5em;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 30px;
+        }
 
-       .education-item img {
-           width: 80px;
-           height: 80px;
-           border-radius: 10px;
-           border: 1px solid var(--border-color);
-       }
+        .education-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-       .skills-list {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-           gap: 10px;
-           text-align: center;
-       }
+        .education-item {
+            width: calc(33% - 40px); /* Three items per row */
+            text-align: center;
+            margin: 20px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            transition: opacity 0.5s, transform 0.5s ease-in-out;
+        }
 
-       .skill {
-           background: transparent;
-           border: 2px solid var(--dominant-color);
-           color: var(--dominant-color);
-           padding: 8px;
-           border-radius: 20px;
-           transition: background-color 0.3s, color 0.3s;
-       }
+        .education-item img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+        }
 
-       .skill:hover {
-           background: var(--dominant-color);
-           color: #fff;
-       }
+        .education-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px var(--hover-shadow-color);
+        }
 
-       .contact-info a {
-           color: var(--dominant-color);
-           text-decoration: none;
-           transition: color 0.3s;
-       }
+        .education-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
 
-       @media (max-width: 768px) {
-           .intro-content {
-               flex-direction: column;
-               text-align: center;
-           }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centering the skills items */
+            margin-top: 20px;
+        }
 
-           .navbar nav {
-               display: none;
-           }
+        .skill {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1.5em; /* Increased font size */
+            display: inline-block;
+            color: var(--text-color);
+            text-align: center;
+            transition: box-shadow 0.3s ease-in-out;
+        }
 
-           .hamburger {
-               display: flex;
-           }
-       }
+        .skill:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 132, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .intro-content {
+                flex-direction: column;
+            }
+
+            .navbar nav {
+                display: none;
+            }
+
+            .education-item {
+                width: calc(100% - 40px);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="navbar" id="navbar">
-            <div class="hamburger" onclick="toggleNavbar()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+        <div class="navbar">
             <nav>
                 <ul>
                     <li><a href="#education">Education</a></li>
@@ -200,42 +237,44 @@
         <div class="intro-section">
             <div class="intro-content">
                 <div class="info">
-                    <h1>I am a Full-Stack Developer</h1>
-                    <p>Building interactive and user-friendly web applications.</p>
-                    <a href="Sakthivelan_2024_Bsc_FullStack.pdf" class="download-btn">Download Resume</a>
+                    <h1>Hi, I’m Sakthivelan</h1>
+                    <p>I am a passionate Full-Stack Developer with a background in Computer Science. I specialize in building dynamic, scalable, and user-friendly web applications.</p>
+                    <p>With a strong foundation in both frontend and backend development, I aim to deliver seamless and engaging experiences.</p>
+                    <a href="Sakthivelan_2024_Bsc_FullStack (1).pdf" class="download-btn" download>Download Resume</a>
                 </div>
                 <div class="photo">
                     <img src="my.png" alt="Profile Photo">
-                    <div class="name">Sakthivelan</div>
                 </div>
             </div>
         </div>
 
         <div class="section" id="education">
             <h2>Education</h2>
-            <div class="education-item">
-                <img src="image1.jpg" alt="College">
-                <div>
-                    <h3>College</h3>
-                    <p>B.Sc in Computer Science, SASTRA University</p>
-                    <p>Year of Graduation: 2024</p>
-                    <p>CGPA: 6.4</p>
+            <div class="education-container">
+                <div class="education-item">
+                    <!-- <img src="images.jpeg" alt="College"> -->
+                    <div>
+                        <h3>College</h3>
+                        <p>B.Sc in Computer Science, SASTRA University</p>
+                        <p>Year of Graduation: 2024</p>
+                        <p>CGPA: 6.4</p>
+                    </div>
                 </div>
-            </div>
-            <div class="education-item">
-                <img src="image2.jpg" alt="Matriculation">
-                <div>
-                    <h3>Matriculation</h3>
-                    <p>The Little Flower Matriculation School: 2020</p>
-                    <p>Percentage: 72%</p>
+                <div class="education-item">
+                    <!-- <img src="matric.jpg" alt="Matriculation"> -->
+                    <div>
+                        <h3>Matriculation</h3>
+                        <p>The Little Flower Matriculation School: 2020</p>
+                        <p>Percentage: 72%</p>
+                    </div>
                 </div>
-            </div>
-            <div class="education-item">
-                <img src="621 T.jpg" alt="Higher Secondary">
-                <div>
-                    <h3>Higher Secondary</h3>
-                    <p>Town Higher Secondary School, Year: 2022</p>
-                    <p>Percentage: 78%</p>
+                <div class="education-item">
+                    <!-- <img src="higher_secondary.jpg" alt="Higher Secondary"> -->
+                    <div>
+                        <h3>Higher Secondary</h3>
+                        <p>Town Higher Secondary School, Year: 2021</p>
+                        <p>Percentage: 78%</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,14 +295,19 @@
             <h2>Projects</h2>
             <div class="project-item">
                 <h3>Online Job Search Portal</h3>
-                <p>A platform to connect job seekers with employers.</p>
+                <p>A platform to connect job seekers with employers. Features include job posting, application tracking, and user profiles. </p>
+                <p><strong>Technologies:</strong> HTML, CSS, JavaScript, MySQL, PHP</p>
+            
             </div>
             <div class="project-item">
                 <h3>Patient Record Management System</h3>
-                <p>A web application for hospitals to manage patient records and allow patients to view their details and book appointments seamlessly.</p>
+                <p>A web application for hospitals to manage patient records efficiently. Features include patient registration, record management, and appointment scheduling.</p>
+                <p><strong>Technologies:</strong> HTML, CSS, JavaScript, MySQL, PHP</p>
+                
             </div>
+            
+           
         </div>
-        
 
         <div class="section" id="contact">
             <h2>Contact</h2>
@@ -273,10 +317,14 @@
     </div>
 
     <script>
-        function toggleNavbar() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const educationItems = document.querySelectorAll(".education-item");
+            educationItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add("visible");
+                }, index * 400);
+            });
+        });
     </script>
 </body>
 </html>
